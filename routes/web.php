@@ -22,5 +22,14 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['auth', 'p
 
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
+    Route::resources([
+        'users' => 'UserController',
+        'roles' => 'RoleController',
+        'permissions' => 'PermissionController',
+    ]);
+
+    Route::get('profile', 'UserController@profile_index')->name('profile');
+
+    Route::get('/map', 'DashboardController@map_index')->name('maps.index');
 
 });
