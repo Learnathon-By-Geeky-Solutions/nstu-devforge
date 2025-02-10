@@ -6,7 +6,7 @@
         <!--begin::Brand Image-->
         <img
           src="{{ asset('/backend/assets/img/AdminLTELogo.png') }}"
-          alt="AdminLTE Logo"
+          alt="Dashboard"
           class="brand-image opacity-75 shadow"
         />
         <!--end::Brand Image-->
