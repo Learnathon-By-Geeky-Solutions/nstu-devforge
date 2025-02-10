@@ -1,0 +1,10 @@
+.toast-success {
+    --bs-toast-bg:  #198754;
+}
+.toast-warning{
+    --bs-toast-bg:#ffc107;
+}
+
+.toast-error{
+    --bs-toast-bg:#BD362F;
+}
