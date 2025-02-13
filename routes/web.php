@@ -26,6 +26,8 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['auth', 'p
         'users' => 'UserController',
         'roles' => 'RoleController',
         'permissions' => 'PermissionController',
+        'vehicles' => 'VehicleController',
+        'drivers' => 'DriverController',
     ]);
 
     Route::get('profile', 'UserController@profile_index')->name('profile');
