@@ -33,6 +33,26 @@
               <p>Dashboard</p>
             </a>
         </li>
+        @can(['vehicles.index'])
+        <li class="nav-item">
+            <a href="{{route('vehicles.index')}}" class="nav-link @if(Route::is('vehicles.*')) active @endif">
+              <i class="nav-icon bi bi-person"></i>
+              <p>
+                Vehicles
+              </p>
+            </a>
+        </li>
+        @endcan
+        @can(['drivers.index'])
+        <li class="nav-item">
+            <a href="{{route('drivers.index')}}" class="nav-link @if(Route::is('drivers.*')) active @endif">
+              <i class="nav-icon bi bi-person"></i>
+              <p>
+                Drivers
+              </p>
+            </a>
+        </li>
+        @endcan
         @can(['users.index', 'roles.index', 'permissions.index'])
         <li class="nav-item @if(Route::is('users.*') || Route::is('roles.*') || Route::is('permissions.*')) menu-open @endif">
             <a href="#" class="nav-link @if(Route::is('users.*') || Route::is('roles.*') || Route::is('permissions.*')) active @endif">
