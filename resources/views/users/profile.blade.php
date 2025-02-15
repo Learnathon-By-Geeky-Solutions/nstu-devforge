@@ -40,7 +40,7 @@
         <div class="col-12 col-md-12 col-lg-5">
           <div class="card card-body  profile-widget">
             <div class="profile-widget-header text-center">
-              <img alt="image" src="{{ asset('backend/assets/img/user2-160x160.jpg') }}" class="rounded-circle profile-widget-picture w-25 h-25">
+              <img alt="Profile" src="{{ asset('backend/assets/img/user2-160x160.jpg') }}" class="rounded-circle profile-widget-picture w-25 h-25">
             </div>
             <div class="profile-widget-description">
                 <div class="mb-3 row">

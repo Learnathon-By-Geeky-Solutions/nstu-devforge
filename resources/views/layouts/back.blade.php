@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>@yield('title', 'Dashboard')</title>
     @include('inc.header')
 </head>
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
