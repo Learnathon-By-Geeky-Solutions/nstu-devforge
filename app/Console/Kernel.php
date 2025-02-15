@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        
+
     }
 
     /**
@@ -22,6 +22,6 @@ class Kernel extends ConsoleKernel
     {
         $this->load(__DIR__.'/Commands');
 
-        require_once base_path('routes/console.php');
+        require base_path('routes/console.php');
     }
 }
