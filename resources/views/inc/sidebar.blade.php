@@ -23,8 +23,7 @@
         <!--begin::Sidebar Menu-->
         <ul
           class="nav sidebar-menu flex-column"
-          data-lte-toggle="treeview"
-          role="menu"
+          data-bs-toggle="collapse"
           data-accordion="false"
         >
         <li class="nav-item">

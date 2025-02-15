@@ -4,7 +4,7 @@
       <!--begin::Start Navbar Links-->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+          <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button" onkeydown="handleKeyDown(event)">
             <i class="bi bi-list"></i>
           </a>
         </li>
@@ -20,7 +20,7 @@
             <img
               src="{{ asset('backend/assets/img/user2-160x160.jpg') }}"
               class="user-image rounded-circle shadow"
-              alt="User Image"
+              alt="User"
             />
             <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
           </a>
@@ -30,7 +30,7 @@
               <img
                 src="{{ asset('backend/assets/img/user2-160x160.jpg') }}"
                 class="rounded-circle shadow"
-                alt="User Image"
+                alt="User"
               />
               <p>
                 {{ Auth::user()->name }}
@@ -42,7 +42,7 @@
             <!--begin::Menu Footer-->
             <li class="user-footer">
               <a href="{{ route('profile') }}" class="btn btn-default btn-flat">Profile</a>
-              <a href="#" class="btn btn-default btn-flat float-end"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">Sign out</a>
+              <button class="btn btn-default btn-flat float-end" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Sign out</button>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
