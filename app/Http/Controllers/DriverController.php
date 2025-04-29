@@ -40,8 +40,7 @@ class DriverController extends Controller
        $user=User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->mobile),
-            'role' => 'driver',
+            'password' => bcrypt($request->password),
         ]);
         $user->assignRole('Driver');
 
@@ -89,7 +88,7 @@ class DriverController extends Controller
         User::update(attributes: [
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->mobile),
+            'password' => bcrypt($request->password),
         ]);
 
 
