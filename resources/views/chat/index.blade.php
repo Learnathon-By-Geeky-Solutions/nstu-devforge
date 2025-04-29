@@ -7,7 +7,7 @@
         <!--begin::Container-->
         <div class="container-fluid">
 
-            <iframe src="/message/{{ $driver }}" style="width: 100%; height: 80vh; border: none;"></iframe>
+            <iframe src="/message/{{ $driver }}" title="Map" style="width: 100%; height: 80vh; border: none;"></iframe>
         </div>
          <!--end::Container-->
     </div>

@@ -40,11 +40,11 @@ class MapController extends Controller
             return response()->json(['status' => false, 'errors' => $validator->errors()], 400);
         }
         try{
-        // Map::create([
-        //     'vehicle_id' => 1,
-        //     'latitude' => $request->lat,
-        //     'longitude' => $request->lon
-        // ]);
+        Map::create([
+            'vehicle_id' => 1,
+            'latitude' => $request->lat,
+            'longitude' => $request->lon
+        ]);
 
         broadcast(new SendLocation($request->lat, $request->lon, $request->vehicle_id));
 
