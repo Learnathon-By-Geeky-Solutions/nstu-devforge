@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Driver;
 use Illuminate\Http\Request;
 
@@ -32,11 +33,26 @@ class DriverController extends Controller
         $this->validate($request,[
             'name' => 'required',
             'mobile' => 'required',
+            'email' => 'unique:users,email',
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required|min:6',
        ]);
+       $user=User::create([
+            'name' => $request->name,
+            'email' => $request->mobile,
+            'password' => bcrypt($request->mobile),
+            'role' => 'driver',
+        ]);
+        $user->assignRole('Driver');
+
        $driver = new Driver();
+         $driver->user_id=$user->id;
        $driver->name=$request->name;
        $driver->mobile=$request->mobile;
        $driver->save();
+
+
+
 
        return redirect()->route('drivers.index')->with('success','driver added sucessfully');
     }
@@ -66,10 +82,23 @@ class DriverController extends Controller
         $this->validate($request,[
             'name' => 'required',
             'mobile' => 'required',
+            'email' => 'unique:users,email,'.$driver->user->id,
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required|min:6',
        ]);
+       $user=User::update([
+            'name' => $request->name,
+            'email' => $request->mobile,
+            'password' => bcrypt($request->mobile),
+        ]);
+
+
        $driver->name=$request->name;
        $driver->mobile=$request->mobile;
        $driver->save();
+
+
+
 
        return redirect()->route('drivers.index')->with('success','driver updated sucessfully');
     }

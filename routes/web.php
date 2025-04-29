@@ -12,6 +12,14 @@ use App\Http\Controllers as Con;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('clear', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    return redirect()->back();
+});
+
 
 Auth::routes(['verify' => true]);
 
@@ -28,10 +36,11 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['auth', 'p
         'permissions' => 'PermissionController',
         'vehicles' => 'VehicleController',
         'drivers' => 'DriverController',
+        'maps' => 'MapController',
     ]);
 
     Route::get('profile', 'UserController@profile_index')->name('profile');
 
-    Route::get('/map', 'DashboardController@map_index')->name('maps.index');
+    Route::get('chat/{driver?}', 'DashboardController@chat')->name('chat.index');
 
 });

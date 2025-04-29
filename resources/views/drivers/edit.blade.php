@@ -41,7 +41,7 @@
                     <div class="card-body">
                         <form action="{{ route('drivers.update', $driver->id) }}" method="post">
                             @csrf
-                            @method("PUT")                            
+                            @method("PUT")
 
                             <div class="mb-3 row">
                                 <label for="name" class="col-md-4 col-form-label text-md-end text-start">Name</label>
@@ -58,6 +58,33 @@
                                   <input type="text" class="form-control @error('mobile') is-invalid @enderror" id="mobile" name="mobile" value="{{ old('mobile',$driver->mobile) }}">
                                     @if ($errors->has('mobile'))
                                         <span class="text-danger">{{ $errors->first('mobile') }}</span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="mb-3 row">d
+                                <label for="email" class="col-md-4 col-form-label text-md-end text-start">Email</label>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $driver->email) }}">
+                                    @if ($errors->has('email'))
+                                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="password" class="col-md-4 col-form-label text-md-end text-start">Password</label>
+                                <div class="col-md-6">
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password">
+                                    @if ($errors->has('password'))
+                                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="password_confirmation" class="col-md-4 col-form-label text-md-end text-start">Confirm Password</label>
+                                <div class="col-md-6">
+                                    <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation" name="password_confirmation">
+                                    @if ($errors->has('password_confirmation'))
+                                        <span class="text-danger">{{ $errors->first('password_confirmation') }}</span>
                                     @endif
                                 </div>
                             </div>

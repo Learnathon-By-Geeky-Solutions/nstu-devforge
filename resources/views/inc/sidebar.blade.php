@@ -21,21 +21,25 @@
     <div class="sidebar-wrapper">
       <nav class="mt-2">
         <!--begin::Sidebar Menu-->
-        <ul
-          class="nav sidebar-menu flex-column"
-          data-bs-toggle="collapse"
-          data-accordion="false"
-        >
+        <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" data-accordion="false">
         <li class="nav-item">
             <a href="{{ route('dashboard') }}" class="nav-link @if(Route::is( 'dashboard')) active @endif">
               <i class="nav-icon bi bi-speedometer"></i>
               <p>Dashboard</p>
             </a>
         </li>
+        @can('maps.index')
+        <li class="nav-item">
+            <a href="{{ route('maps.index') }}" class="nav-link @if(Route::is('maps.*')) active @endif">
+              <i class="nav-icon bi bi-map"></i>
+              <p>Maps</p>
+            </a>
+        </li>
+        @endcan
         @can(['vehicles.index'])
         <li class="nav-item">
             <a href="{{route('vehicles.index')}}" class="nav-link @if(Route::is('vehicles.*')) active @endif">
-              <i class="nav-icon bi bi-person"></i>
+              <i class="nav-icon bi bi-bus-front"></i>
               <p>
                 Vehicles
               </p>
@@ -48,6 +52,16 @@
               <i class="nav-icon bi bi-person"></i>
               <p>
                 Drivers
+              </p>
+            </a>
+        </li>
+        @endcan
+        @can('chat.index')
+        <li class="nav-item">
+            <a href="{{ route('chat.index') }}" class="nav-link @if(Route::is('chat.*')) active @endif">
+              <i class="nav-icon bi bi-chat"></i>
+              <p>
+                Chat
               </p>
             </a>
         </li>
