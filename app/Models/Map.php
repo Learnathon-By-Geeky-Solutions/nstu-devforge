@@ -5,12 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Driver extends Model
+class Map extends Model
 {
     use HasFactory;
 
-    public function user()
-    {
-        return $this->hasOne(User::class, 'id', 'user_id');
-    }
+    protected $fillable = ['latitude', 'longitude','vehicle_id'];
 }

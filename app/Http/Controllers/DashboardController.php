@@ -10,4 +10,8 @@ class DashboardController extends Controller
     {
         return view('dashboard');
     }
+    public function chat($driver='')
+    {
+        return view('chat.index',compact('driver'));
+    }
 }
