@@ -39,7 +39,7 @@ class DriverController extends Controller
        ]);
        $user=User::create([
             'name' => $request->name,
-            'email' => $request->mobile,
+            'email' => $request->email,
             'password' => bcrypt($request->mobile),
             'role' => 'driver',
         ]);
@@ -86,9 +86,9 @@ class DriverController extends Controller
             'password' => 'required|min:6|confirmed',
             'password_confirmation' => 'required|min:6',
        ]);
-       $user=User::update([
+        User::update(attributes: [
             'name' => $request->name,
-            'email' => $request->mobile,
+            'email' => $request->email,
             'password' => bcrypt($request->mobile),
         ]);
 
